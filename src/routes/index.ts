@@ -5,7 +5,7 @@ import imageResizeRoutes from './api/image-resize-api';
 const routes = express.Router();
 
 routes.get('/', (req, res) => {
-  res.status(200).send('API route');
+  res.status(200).send('API route - Available APIs: /image /image-resize');
 });
 
 // API for viewing the source images

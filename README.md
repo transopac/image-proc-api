@@ -39,7 +39,7 @@ node dist
 
 For convenience, a barebones page can be viewed for testing the API.
 
-You can use a web browser, curl, or any other REST client for call the APIs.
+You can use a web browser, curl, or any other REST client for calling the APIs.
 
 - Image API - `GET /api/image?name=fjord.jpg`
 

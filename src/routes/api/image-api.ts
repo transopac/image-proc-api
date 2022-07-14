@@ -1,5 +1,6 @@
 import express from 'express';
 import * as imageFs from '../../utilities/image-fs';
+import { StatusCodes } from 'http-status-codes';
 
 const imageRoutes = express.Router();
 
@@ -10,12 +11,12 @@ imageRoutes.get('/', (req, res) => {
   if (name === undefined) {
     const errMsg = 'Image name not specified!';
     console.error(errMsg);
-    res.status(400).send(errMsg);
+    res.status(StatusCodes.BAD_REQUEST).send(errMsg);
     return;
   } else if (!imageFs.checkIfSourceImageExists(name)) {
     const errMsg = `Image '${name}' not found!`;
     console.error(errMsg);
-    res.status(400).send(errMsg);
+    res.status(StatusCodes.NOT_FOUND).send(errMsg);
     return;
   }
 

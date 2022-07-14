@@ -1,6 +1,7 @@
 import express from 'express';
 import resizeImage from '../../utilities/image-resize';
 import * as imageFs from '../../utilities/image-fs';
+import { StatusCodes } from 'http-status-codes';
 
 const imageResizeRoutes = express.Router();
 
@@ -13,12 +14,12 @@ imageResizeRoutes.get('/', (req, res) => {
   if (name === undefined) {
     const errMsg = 'Image name not specified!';
     console.error(errMsg);
-    res.status(400).send(errMsg);
+    res.status(StatusCodes.BAD_REQUEST).send(errMsg);
     return;
   } else if (!imageFs.checkIfSourceImageExists(name)) {
     const errMsg = `Image '${name}' not found!`;
     console.error(errMsg);
-    res.status(400).send(errMsg);
+    res.status(StatusCodes.NOT_FOUND).send(errMsg);
     return;
   }
 
@@ -32,7 +33,7 @@ imageResizeRoutes.get('/', (req, res) => {
     .catch((e) => {
       const errMsg = 'Error occurred while processing image: ' + e;
       console.error(errMsg);
-      res.status(500).send(errMsg);
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(errMsg);
     });
 });
 
