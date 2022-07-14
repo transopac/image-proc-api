@@ -7,6 +7,8 @@ It currently has the following APIs:
 - Image API - For viewing the source images in the `images` directory.
 - Image Resize API - For generating and viewing the resized versions of the source images. The resized images will be saved to the `resizedImages` directory.
 
+![Image Processing API Demo UI](demo-ui.png)
+
 ## How to run it?
 
 You will need to install `npm` and `node.js`. ( https://nodejs.org/en/ )
@@ -37,7 +39,7 @@ node dist
 
 ## How to use it?
 
-For convenience, a barebones page can be viewed for testing the API.
+For convenience, a barebones demo UI can be viewed for testing the API at `http://localhost:3000` in your web browser.
 
 You can use a web browser, curl, or any other REST client for calling the APIs.
 

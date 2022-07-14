@@ -46,24 +46,33 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <h2>Image Processing API - Arpit Srivastava</h2>
+      Click the following links to test the APIs.
       
       <h3>Resize Images (width x height)</h3>
       <h4>JPG image</h4>
       <p style="font-weight:bold;">fjord.jpg</p>
-      <a href="api/image?name=fjord.jpg">Original Image</a>
+      <a target="_blank" href="api/image?name=fjord.jpg">Original Image</a>
       <p style="font-weight:bold;">Resized:
-        <a href="api/image-resize?name=fjord.jpg&width=300&height=200">300x200</a> 
-        <a href="api/image-resize?name=fjord.jpg&width=50&height=50">50x50</a>
-        <a href="api/image-resize?name=fjord.jpg&width=800&height=600">800x600</a><br>
+        <a target="_blank" href="api/image-resize?name=fjord.jpg&width=300&height=200">300x200</a> 
+        <a target="_blank" href="api/image-resize?name=fjord.jpg&width=50&height=50">50x50</a>
+        <a target="_blank" href="api/image-resize?name=fjord.jpg&width=800&height=600">800x600</a><br>
+      </p>
+
+      <p style="font-weight:bold;">encenadaport.jpg</p>
+      <a target="_blank" href="api/image?name=encenadaport.jpg">Original Image</a>
+      <p style="font-weight:bold;">Resized:
+        <a target="_blank" href="api/image-resize?name=encenadaport.jpg&width=300&height=200">300x200</a> 
+        <a target="_blank" href="api/image-resize?name=encenadaport.jpg&width=50&height=50">50x50</a>
+        <a target="_blank" href="api/image-resize?name=encenadaport.jpg&width=800&height=600">800x600</a><br>
       </p>
       
       <h4>PNG image</h4>
       <p style="font-weight:bold;">testpng.png</p>
-      <a href="api/image?name=testpng.png">Original Image</a><br>
+      <a target="_blank" href="api/image?name=testpng.png">Original Image</a><br>
       <p style="font-weight:bold;">Resized:
-        <a href="api/image-resize?name=testpng.png&width=300&height=200">300x200</a>
-        <a href="api/image-resize?name=testpng.png&width=200&height=200">200x200</a>
-        <a href="api/image-resize?name=testpng.png&width=800&height=600">800x600</a>
+        <a target="_blank" href="api/image-resize?name=testpng.png&width=300&height=200">300x200</a>
+        <a target="_blank" href="api/image-resize?name=testpng.png&width=200&height=200">200x200</a>
+        <a target="_blank" href="api/image-resize?name=testpng.png&width=800&height=600">800x600</a>
       </p>
     </body>
     </html>`;
