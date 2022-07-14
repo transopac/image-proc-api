@@ -19,10 +19,16 @@ For quickly testing this, check out the code and then navigate to the directory 
 npm install
 ```
 
-Then you can test the code using:
+Then you can run and test the APIs using:
 
 ```
 npm run start
+```
+
+You can run the unit tests using:
+
+```
+npm run test
 ```
 
 You can build the code using:
