@@ -1,10 +1,10 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import * as imageFs from '../../utilities/image-fs';
 import { StatusCodes } from 'http-status-codes';
 
 const imageRoutes = express.Router();
 
-imageRoutes.get('/', (req, res) => {
+imageRoutes.get('/', (req: Request, res: Response): void => {
   console.debug('Image API route: query =', req.query);
   const name: string = req.query.name as string;
 

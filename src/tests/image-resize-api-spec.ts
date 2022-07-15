@@ -12,15 +12,15 @@ const QUERY_PARAMS_RESIZE_DIMENSIONS = `&width=${WIDTH}&height=${HEIGHT}`;
 
 const request = supertest(app);
 
-describe('Test Image Resize API endpoint responses', () => {
-  it('Call Image Resize API with existing image file name', async () => {
+describe('Test Image Resize API endpoint responses', (): void => {
+  it('Call Image Resize API with existing image file name', async (): Promise<void> => {
     const response = await request.get(
       API_URL_ENDPOINT + IMAGE_FILE_EXISTENT + QUERY_PARAMS_RESIZE_DIMENSIONS
     );
     expect(response.status).toBe(StatusCodes.OK);
   });
 
-  it('Call Image Resize API with non-existent image file name', async () => {
+  it('Call Image Resize API with non-existent image file name', async (): Promise<void> => {
     const response = await request.get(
       API_URL_ENDPOINT +
         IMAGE_FILE_NON_EXISTENT +
@@ -29,7 +29,7 @@ describe('Test Image Resize API endpoint responses', () => {
     expect(response.status).toBe(StatusCodes.NOT_FOUND);
   });
 
-  it('Call Image Resize API with unsupported-format image file name', async () => {
+  it('Call Image Resize API with unsupported-format image file name', async (): Promise<void> => {
     const response = await request.get(
       API_URL_ENDPOINT +
         IMAGE_FILE_UNSUPPORTED_FORMAT +

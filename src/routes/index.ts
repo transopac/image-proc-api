@@ -1,10 +1,10 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import imageRoutes from './api/image-api';
 import imageResizeRoutes from './api/image-resize-api';
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
+routes.get('/', (req: Request, res: Response): void => {
   res.status(200).send('API route - Available APIs: /image /image-resize');
 });
 

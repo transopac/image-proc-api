@@ -4,8 +4,8 @@ import { StatusCodes } from 'http-status-codes';
 
 const request = supertest(app);
 
-describe('Test endpoint responses', () => {
-  it('gets the base endpoint', async () => {
+describe('Test endpoint responses', (): void => {
+  it('gets the base endpoint', async (): Promise<void> => {
     const response = await request.get('/');
     expect(response.status).toBe(StatusCodes.OK);
   });

@@ -8,13 +8,13 @@ const API_URL_ENDPOINT = '/api/image?name=';
 
 const request = supertest(app);
 
-describe('Test Image API endpoint responses', () => {
-  it('Call Image API with existing image file name', async () => {
+describe('Test Image API endpoint responses', (): void => {
+  it('Call Image API with existing image file name', async (): Promise<void> => {
     const response = await request.get(API_URL_ENDPOINT + IMAGE_FILE_EXISTENT);
     expect(response.status).toBe(StatusCodes.OK);
   });
 
-  it('Call Image API with non-existent image file name', async () => {
+  it('Call Image API with non-existent image file name', async (): Promise<void> => {
     const response = await request.get(
       API_URL_ENDPOINT + IMAGE_FILE_NON_EXISTENT
     );

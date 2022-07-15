@@ -1,11 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import resizeImage from '../../utilities/image-resize';
 import * as imageFs from '../../utilities/image-fs';
 import { StatusCodes } from 'http-status-codes';
 
 const imageResizeRoutes = express.Router();
 
-imageResizeRoutes.get('/', (req, res) => {
+imageResizeRoutes.get('/', (req: Request, res: Response): void => {
   console.debug('Image Resize API route: query =', req.query);
   const name: string = req.query.name as string;
   const width: number = parseInt(req.query.width as string);
@@ -24,13 +24,13 @@ imageResizeRoutes.get('/', (req, res) => {
   }
 
   resizeImage(name as string, width, height)
-    .then((resizedImageFilePath) => {
+    .then((resizedImageFilePath: string): void => {
       console.log(
         'Sending resized image file in response: ' + resizedImageFilePath
       );
       res.sendFile(resizedImageFilePath);
     })
-    .catch((e) => {
+    .catch((e: Error): void => {
       const errMsg = 'Error occurred while processing image: ' + e;
       console.error(errMsg);
       res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(errMsg);

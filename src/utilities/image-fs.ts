@@ -14,7 +14,7 @@ const RESIZED_IMAGES_DIRECTORY_PATH = path.join(
   RESIZED_IMAGES_DIRECTORY_NAME
 );
 
-const recreateImageDirectoriesIfMissing = () => {
+const recreateImageDirectoriesIfMissing = (): void => {
   if (!fs.existsSync(SOURCE_IMAGES_DIRECTORY_PATH)) {
     fs.mkdirSync(SOURCE_IMAGES_DIRECTORY_PATH);
   }

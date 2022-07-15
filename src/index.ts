@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import morgan from 'morgan';
 import routes from './routes/index';
 
@@ -10,7 +10,7 @@ app.use(
   morgan('[:date[iso]] Request: :method :url HTTP/:http-version', {
     immediate: true,
     stream: {
-      write: (message) => {
+      write: (message: string): void => {
         console.log(message.trim());
       }
     }
@@ -23,7 +23,7 @@ app.use(
     '[:date[iso]] Response: :method :url :status :res[content-length] :response-time ms',
     {
       stream: {
-        write: (message) => {
+        write: (message: string): void => {
           console.log(message.trim());
         }
       }
@@ -35,7 +35,7 @@ app.use(
 app.use('/api', routes);
 
 // Basic UI for testing Image Processing API
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response): void => {
   const html = `<!DOCTYPE html>
     <html lang="en-US">
     <head>
@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
 });
 
 // start the Express server
-app.listen(port, () => {
+app.listen(port, (): void => {
   console.log(`server started at http://localhost:${port}`);
 });
 

@@ -12,23 +12,23 @@ const RESIZED_IMAGES_DIRECTORY_PATH = path.join(
 const imageFileExistent = 'fjord.jpg';
 const imageFileNonExistent = 'doesnotexist.nope';
 
-describe('Test image filesystem related utility functions', () => {
-  it('checkIfSourceImageExists with source image file that exists', () => {
+describe('Test image filesystem related utility functions', (): void => {
+  it('checkIfSourceImageExists with source image file that exists', (): void => {
     const exists = imageFs.checkIfSourceImageExists(imageFileExistent);
     expect(exists).toBeTrue();
   });
 
-  it('checkIfSourceImageExists with source image file that does not exist', () => {
+  it('checkIfSourceImageExists with source image file that does not exist', (): void => {
     const exists = imageFs.checkIfSourceImageExists(imageFileNonExistent);
     expect(exists).toBeFalse();
   });
 
-  it('getSourceImagePath should build path to source image file', () => {
+  it('getSourceImagePath should build path to source image file', (): void => {
     const sourceImagePath = imageFs.getSourceImagePath(imageFileExistent);
     expect(sourceImagePath).toContain(imageFileExistent);
   });
 
-  it('recreateImageDirectoriesIfMissing should recreate deleted resized images directory', () => {
+  it('recreateImageDirectoriesIfMissing should recreate deleted resized images directory', (): void => {
     // Deleting resized images directory
     fs.rmSync(RESIZED_IMAGES_DIRECTORY_PATH, { recursive: true });
     expect(fs.existsSync(RESIZED_IMAGES_DIRECTORY_PATH)).toBeFalse();

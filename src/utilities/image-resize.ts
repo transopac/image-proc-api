@@ -5,7 +5,7 @@ const determineImageResizedName = (
   imageName: string,
   width: number,
   height: number
-) => {
+): string => {
   const imageFileExtensionDotIndex = imageName.lastIndexOf('.');
   const imageNameWithoutFileExtension = imageName.substring(
     0,
